@@ -1,18 +1,42 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'gist code coverage badge'
+description:
+  'Extact code coverage percentage from a report and generate metadata for a
+  shields.io badge'
+author: 'SnafetsTheOne'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  label:
+    description: 'The badge label. For example "Unit Test Coverage"'
+    required: false
+    default: 'Test Coverage'
+  color:
+    description: 'The color of the badge. See https://shields.io/ for options'
+    required: false
+    default: 'brightgreen'
+  format:
+    description: 'The format of the codecoverage report'
     required: true
-    default: '1000'
+    default: 'cobertura'
+  path:
+    description: 'the path to the report file'
+    required: true
+  gist-filename:
+    description: 'Filename of the Gist used for storing the badge data'
+    required: false
+  gist-id:
+    description: 'ID if the Gist used for storing the badge data'
+    required: false
+  gist-auth-token:
+    description: 'Auth token that alows to write to the given Gist'
+    required: false
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  percentage:
+    description: 'The code coverage percentage'
+  badge:
+    description: 'The badge data as in json format as required by shields.io'
 
 runs:
   using: node20
