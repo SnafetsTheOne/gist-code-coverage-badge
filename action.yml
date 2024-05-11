@@ -3,6 +3,9 @@ description:
   'Extact code coverage percentage from a report and generate metadata for a
   shields.io badge'
 author: 'SnafetsTheOne'
+branding:
+  icon: 'award'  
+  color: 'yellow'
 
 # Define your inputs here.
 inputs:
