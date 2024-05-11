@@ -17,8 +17,7 @@ inputs:
   format:
     description: 'The format of the codecoverage report'
     required: true
-    default: 'cobertura'
-  path:
+  report:
     description: 'the path to the report file'
     required: true
   gist-filename:

@@ -58,9 +58,9 @@ jobs:
         uses: ./
         with:
           report: data/coverage.opencover.xml
-          format: cobertura
+          format: opencover
 
-      - name: Print Output
+      - name: Print Opencover Output
         id: output-opencover
         run: echo "${{ steps.test-action-opencover.outputs.percentage }}"
 
@@ -71,6 +71,6 @@ jobs:
           report: data/coverage.cobertura.xml
           format: cobertura
 
-      - name: Print Output
+      - name: Print Cobertura Output
         id: output-cobertura
         run: echo "${{ steps.test-action-cobertura.outputs.percentage }}"
