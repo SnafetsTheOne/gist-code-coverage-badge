@@ -131,7 +131,7 @@ function extractSummaryFromCobertura(content) {
     )
   }
 
-  return match[1].slice(0, 4)
+  return (Math.round(parseFloat(match[1]) * 10000) / 100).toString()
 }
 
 module.exports = {
